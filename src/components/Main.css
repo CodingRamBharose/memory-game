@@ -1,0 +1,103 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif Arial, Helvetica, sans-serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  background: url(./images/background.png);
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.memory-game {
+  width: 550px;
+  height: 550px;
+  margin: auto;
+  flex-direction: column;
+  align-content: space-around;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.memory-card {
+  width: calc(22%);
+  cursor: pointer;
+  height: calc(22%);
+  margin: 6px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+@media(max-width:700px){
+  .memory-game{
+    width: 250px;
+    height: 250px;
+  }
+  .memory-card{
+    margin: 2px;
+  }
+}
+.startgame{
+  background-image: linear-gradient(rgb(0 61 70),rgb(0 0 0 / 33%)),url(./images/background.png);
+  height: 355px;
+  width: 562px;
+  padding-top: 140px;
+  color: white;
+  box-shadow: 35px 35px 100px 80px rgb(255 252 252);
+}
+.won{
+  font-size: 1.5rem;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.start{
+  background-color: rgba(0, 0, 0, 0.482);
+  border-radius: 10px;
+  margin: auto;
+  width: 40%;
+  padding: 5px;
+  cursor: pointer;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.start:hover{
+  transform: scale(1.03)
+}
+h4{
+  margin-top: 7px;
+}
